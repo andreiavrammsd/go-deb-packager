@@ -1,11 +1,4 @@
-PACKAGE=pkgdaemon
-VERSION=1.0.3
-MAINTAINER=Andrei Avram <avramandrei@ymail.com>
-SHORT_DESCRIPTION=The short description
-DESCRIPTION=The long description text of the package
-BUILD=`git rev-parse HEAD`
-LDFLAGS=-ldflags "-X main.Version=${VERSION} -X main.Build=${BUILD}"
-RELEASE=release/${PACKAGE}
+RELEASE=release/${PACKAGE}_${VERSION}
 
 init:
 	@cp -r template/package ${RELEASE}
@@ -45,7 +38,7 @@ build:
 	@sed -i -E "s#(<CHECKSUM_ALGORITHM>)#SHA1#" ${RELEASE}/DEBIAN/control
 	
 package:
-	dpkg-deb --build release/${PACKAGE}
+	dpkg-deb --build ${RELEASE}
 
 clean:
-	@rm -rf release/${PACKAGE}
+	@rm -rf ${RELEASE}
