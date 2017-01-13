@@ -1,0 +1,7 @@
+.idea
+release/*
+!release/.gitkeep
+template/package/usr/local/bin/*
+!template/package/usr/local/bin/.gitkeep
+template/package/etc/package/*
+!template/package/etc/package/.gitkeep
