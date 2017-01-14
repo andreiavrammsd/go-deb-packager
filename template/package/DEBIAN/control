@@ -1,8 +1,9 @@
 Package: <PACKAGE>
 Version: <VERSION>
-Section: base
-Priority: optional
-Architecture: amd64
+Section: <SECTION>
+Priority: <PRIORITY>
+Architecture: <ARCHITECTURE>
+Installed-Size: <SIZE>
 Maintainer: <MAINTAINER>
 Description: <SHORT_DESCRIPTION>
  <DESCRIPTION>

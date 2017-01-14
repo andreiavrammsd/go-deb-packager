@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+    bpd:
+      build: .
+      env_file: .env
+      volumes:
+        - ./:/bpd
+        - $PROJECT_PATH:/go/src/$PACKAGE
+ 

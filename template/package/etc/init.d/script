@@ -13,6 +13,7 @@
 DAEMON=<DAEMON>
 PIDFILE=/run/<PACKAGE>.pid
 LOGFILE=/var/log/<PACKAGE>.log
+touch $LOGFILE
 
 do_start() {
     start-stop-daemon -S --exec $DAEMON -p $PIDFILE -m -R 1 -b >> $LOGFILE

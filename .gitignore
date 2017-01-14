@@ -1,4 +1,5 @@
 .idea
+.env
 release/*
 !release/.gitkeep
 template/package/usr/local/bin/*
