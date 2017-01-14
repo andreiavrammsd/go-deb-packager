@@ -29,7 +29,7 @@ init:
 build:
 	@cd /go/src/${PACKAGE}; go get -t; go test; go build ${LDFLAGS} -race -o /bpd/${RELEASE}/usr/local/bin/${PACKAGE}
 	@chmod +x ${RELEASE}/usr/local/bin/${PACKAGE}
-	SIZE=`du -s ${RELEASE} | cut -d "r" -f 1`; \
+	@SIZE=`du -s ${RELEASE} | cut -d "r" -f 1`; \
     		sed -i -E "s#(<SIZE>)#$$SIZE#" ${RELEASE}/DEBIAN/control
 
 	@CHECKSUM_HASH=`shasum -a 1 ${RELEASE}/usr/local/bin/${PACKAGE} | cut -d ' ' -f 1`; \
