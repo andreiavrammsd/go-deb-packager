@@ -14,4 +14,4 @@ RUN /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
-WORKDIR /bpd
+WORKDIR /pkg
