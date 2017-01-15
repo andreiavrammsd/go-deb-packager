@@ -32,3 +32,23 @@
 * Pull project from repository
 * Deploy
 * Create git tag
+
+### A simple way to distribute your package
+
+Save this as install.sh on your server:
+
+```
+#!/bin/sh
+
+HOST=127.0.0.1
+DIR=/
+FILE=pkg_1.0.0.deb
+TMP=/tmp/${FILE}
+curl ${HOST}${DIR}${FILE} > ${TMP} && sudo dpkg -i ${TMP} && rm ${TMP}
+```
+
+Then:
+
+```
+curl https://127.0.0.1/install.sh | sh
+```
