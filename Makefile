@@ -47,5 +47,5 @@ package:
 	dpkg-deb --build ${RELEASE}
 
 clean:
-	rm -rf ${RELEASE}
+	@rm -rf ${RELEASE}
 	@cd /go/src/${PACKAGE}; go clean 
